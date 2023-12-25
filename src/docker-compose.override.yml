@@ -16,4 +16,4 @@ services:
     depends_on:
       - catalogdb
     ports:
-      - "8000:80"
+      - "9001:80"
