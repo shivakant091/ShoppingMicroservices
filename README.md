@@ -31,4 +31,4 @@ docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d
 
 4. You can **launch microservices** as below urls:
 
-* **Catalog API -> http://host.docker.internal:8000/swagger/index.html**
+* **Catalog API -> http://host.docker.internal:9001/swagger/index.html**
