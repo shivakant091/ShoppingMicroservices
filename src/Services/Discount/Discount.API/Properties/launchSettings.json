@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "http": {
+    "Discount.API": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger",
