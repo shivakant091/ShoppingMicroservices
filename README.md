@@ -25,6 +25,13 @@ We have implemented below **features over the run-aspnetcore-microservices repos
 * Using **Dapper for micro-orm implementation** to simplify data access and ensure high performance
 * **PostgreSQL database** connection and containerization
 
+#### Ordering Microservice
+* Implementing **DDD, CQRS, and Clean Architecture** with using Best Practices
+* Developing **CQRS with using MediatR, FluentValidation and AutoMapper packages**
+* Consuming **RabbitMQ** BasketCheckout event queue with using **MassTransit-RabbitMQ** Configuration
+* **SqlServer database** connection and containerization
+* Using **Entity Framework Core ORM** and auto migrate to SqlServer when application startup
+  
 
 ## Run The Project
 You will need the following tools:
@@ -50,3 +57,6 @@ docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d
 * **Catalog API -> http://host.docker.internal:8000/swagger/index.html**
 * **Basket API -> http://host.docker.internal:8001/swagger/index.html**
 * **Discount API -> http://host.docker.internal:8002/swagger/index.html**
+* **Ordering API -> http://host.docker.internal:8004/swagger/index.html**
+* **Portainer -> http://host.docker.internal:9000**   -- admin/admin1234
+* **pgAdmin PostgreSQL -> http://host.docker.internal:5050**   -- admin@shiva.com/admin1234
