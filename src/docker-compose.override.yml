@@ -24,6 +24,14 @@ services:
         - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data/
+  orderdb:
+    container_name: orderdb
+    environment:
+        SA_PASSWORD: "Shiva1234567"
+        ACCEPT_EULA: 'Y'
+    restart: always
+    ports:
+        - "1433:1433"
   portainer:
     container_name: portainer
     restart: always
@@ -36,7 +44,7 @@ services:
   pgadmin:
     container_name: pgadmin
     environment:
-      - PGADMIN_DEFAULT_EMAIL=admin@aspnetrun.com
+      - PGADMIN_DEFAULT_EMAIL=admin@shiva.com
       - PGADMIN_DEFAULT_PASSWORD=admin1234
     restart: always
     ports:
@@ -86,4 +94,16 @@ services:
     ports:
       - "8003:8080"
 
+
+
+  ordering.api:
+    container_name: ordering.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "ConnectionStrings:OrderingConnectionString=Server=orderdb;Database=OrderDb;User Id=sa;Password=Shiva1234567;TrustServerCertificate=True"  
+      - "EventBusSettings:HostAddress=amqp://guest:guest@rabbitmq:5672"
+    depends_on:
+        - orderdb
+    ports:
+        - "8004:8080"
 
